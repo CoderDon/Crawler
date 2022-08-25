@@ -50,32 +50,32 @@
 
 ### 从机爬虫程序
 
-![从机爬虫程序](.\Pic\slave.jpg)
+![从机爬虫程序](https://github.com/CoderDon/Crawler/raw/main/Pic/slave.jpg)
 
 ## 4.2 主机数据库
 
 ### Redis数据库
 
-![Redis数据库](.\Pic\redis_data.jpg)
+![Redis数据库](https://github.com/CoderDon/Crawler/raw/main/Pic/redis_data.jpg)
 
 ### MongoDB数据库
 
-![MongoDB数据库](.\Pic\mongoDB_data.jpg)
+![MongoDB数据库](https://github.com/CoderDon/Crawler/raw/main/Pic/mongoDB_data.jpg)
 
 ## 4.3 可视化
 
 ### 首页
 
-![首页](.\Pic\index.jpg)
+![首页](https://github.com/CoderDon/Crawler/raw/main/Pic/index.jpg)
 
 ### 电影
 
-![电影](.\Pic\movies.jpg)
+![电影](https://github.com/CoderDon/Crawler/raw/main/Pic/movies.jpg)
 
 ### 评分
 
-![评分](.\Pic\score.jpg)
+![评分](https://github.com/CoderDon/Crawler/raw/main/Pic/score.jpg)
 
 ### 词云
 
-![词云](.\Pic\words.jpg)
+![词云](https://github.com/CoderDon/Crawler/raw/main/Pic/words.jpg)
