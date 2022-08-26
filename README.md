@@ -90,7 +90,7 @@ python proxyPool.py server
 
 ### Redis缓存代理IPs
 
-![Redis缓存代理IPs](https://github.com/CoderDon/Crawler/raw/main/Pic/proxies.jpg)
+![Redis缓存代理IPs](https://github.com/CoderDon/Crawler/raw/main/Pic/proxy.jpg)
 
 ### MongoDB数据库
 
