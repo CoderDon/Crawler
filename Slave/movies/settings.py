@@ -66,8 +66,13 @@ DOWNLOAD_DELAY = 5
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'movies.middlewares.MoviesDownloaderMiddleware': 543,
+    'movies.middlewares.RandomProxyMiddleWare': 241,
+    'movies.middlewares.UserAgentMiddleware': 242,
+    'movies.middlewares.MoviesDownloaderMiddleware': 243,
 }
+
+PROXY_REDIS_KEY = 'use_proxy'
+HTTPPROXY_ENABLED = True
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html

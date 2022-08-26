@@ -14,7 +14,12 @@
 - Echarts
 ### 后端
 - flask 2.2.2
+## 1.4 IP代理池
+
+&ensp;&ensp;参考：https://github.com/jhao104/proxy_pool进行配置。
+
 # 2. 项目文件目录
+
 **---FlaskProject（数据可视化代码）**
 ------static（用到的静态资源）
 ------templates（前端展示模板）
@@ -24,10 +29,17 @@
 **---Master（主机端的代码）**
 ------main.py（将数据从redis中取出，放入到MongoDB）
 **---Pic（运行效果图）**
+
+**---proxy_pool（IP代理池）**
+
 **---Slave（从机端的代码）**
 ------movies
+
 ---------spiders
 ------------douban_redis.py（爬取数据的主要代码）
+
+---------middlewares.py（中间件，实现IP代理、动态User-Agent等功能）
+
 ---------settings.py（爬虫的相关配置）
 
 # 3. 项目配置过程
@@ -40,10 +52,28 @@
 ## 3.2 主机
 &ensp;&ensp;主机负责维护Redis数据库，并将Redis数据库中的数据存储到MongoDB数据库中。
 &ensp;&ensp;启动Redis服务后，在`redis-cli.exe`中运行：`lpush douban:start_urls https://movie.douban.com/top250`命令即可在Redis数据库中插入起始url，插入成功后从机会自动开始爬取程序。
+
+&ensp;&ensp;主机端运行代理池`proxy_pool`下的代码可获取免费代理IP，并存入`redis`数据库中。
+
 &ensp;&ensp;主机端的main.py用于实现取数据的功能，可以将Redis数据库中的数据取出，放入到MongoDB数据库中。
 
 ## 3.3 可视化
 &ensp;&ensp;安装flask后，在主机端打开`FlaskProject`文件，运行`app.py`即可启动后端服务。启动后端服务后，在浏览器访问在本机默认IP:端口`http://127.0.0.1:5000/`即可看到可视化效果。
+
+## 3.4 IP代理池
+
+&ensp;&ensp;项目参考：https://github.com/jhao104/proxy_pool
+
+&ensp;&ensp;参考说明配置完环境后运行以下命令可以启动IP池程序。
+
+```
+# 启动调度程序
+python proxyPool.py schedule
+
+# 启动webApi服务
+python proxyPool.py server
+```
+
 # 4. 运行截图
 
 ## 4.1 从机运行
@@ -54,9 +84,13 @@
 
 ## 4.2 主机数据库
 
-### Redis数据库
+### Redis数据库缓存URL
 
-![Redis数据库](https://github.com/CoderDon/Crawler/raw/main/Pic/redis_data.jpg)
+![Redis数据库缓存URL](https://github.com/CoderDon/Crawler/raw/main/Pic/redis_data.jpg)
+
+### Redis缓存代理IPs
+
+![Redis缓存代理IPs](https://github.com/CoderDon/Crawler/raw/main/Pic/proxies.jpg)
 
 ### MongoDB数据库
 

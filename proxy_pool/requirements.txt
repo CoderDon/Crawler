@@ -1,0 +1,8 @@
+APScheduler==3.2.0
+werkzeug==0.15.5
+Flask==2.2.2
+requests==2.20.0
+click==7.0
+gunicorn==19.9.0
+lxml
+redis
